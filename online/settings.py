@@ -26,6 +26,9 @@ SECRET_KEY = 'pgw0s=0f#46w&1^ybcflaax==8+9$m-9-z%)n$y6z*vq1vw03j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.UserProfile'
@@ -39,13 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
-    'goods',
-    'user_operation',
-    'trade',
+    'users.apps.UsersConfig',
+    'goods.apps.GoodsConfig',
+    'user_operation.apps.UserOperationConfig',
+    'trade.apps.TradeConfig',
     'DjangoUeditor',
     'xadmin',
     'crispy_forms',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
